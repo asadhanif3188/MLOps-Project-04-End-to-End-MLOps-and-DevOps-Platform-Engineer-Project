@@ -2,15 +2,22 @@ import requests
 import time
 import json
 import random
+import os
 from kafka import KafkaProducer
 
 # ----------------------------------------------------
 
-TOPIC = "anomaly_detection_topic"
+# TOPIC = "anomaly_detection_topic"
 
 # API Configuration
 # API_URL = "http://localhost:8000/generate"  # Use "/generate/normal" or "/generate/anomalous" for specific data
-API_URL = "http://anomaly_dataset_api:8000/generate"  # Use "/generate/normal" or "/generate/anomalous" for specific data
+# API_URL = "http://anomaly_dataset_api:8000/generate"  # Use "/generate/normal" or "/generate/anomalous" for specific data
+
+# ----------------------------------------------------
+
+# Read environment variables
+TOPIC = os.getenv("KAFKA_TOPIC")
+API_URL = os.getenv("ANOMALY_API_URL")
 
 # ----------------------------------------------------
 

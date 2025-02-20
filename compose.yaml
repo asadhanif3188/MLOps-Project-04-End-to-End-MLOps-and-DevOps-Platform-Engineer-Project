@@ -1,0 +1,19 @@
+services:
+  anomaly_dataset_api:
+    build:
+      context: ./data_sources/apis/anomaly_dataset_api
+    image: anomaly_dataset:v1  # Custom image name
+    container_name: anomaly_dataset_api_container  # Custom container name
+    ports:
+      - "8000:8000"
+
+  kafka_producer:
+    build:
+      context: ./pipelines/data_pipeline/kafka_producer
+    image: kafka_producer:v1  # Custom image name
+    container_name: kafka_producer_container  # Custom container name
+    environment:
+      - KAFKA_TOPIC=anomaly_detection_topic
+      - ANOMALY_API_URL=http://anomaly_dataset_api:8000/generate
+    depends_on:
+      - anomaly_dataset_api

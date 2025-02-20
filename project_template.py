@@ -23,6 +23,7 @@ list_of_files = [
     "pipelines/data_pipeline/kafka_producer/Dockerfile",
     
     # "pipelines/ml_pipeline",
+    "compose.yaml",
 ]
 
 
