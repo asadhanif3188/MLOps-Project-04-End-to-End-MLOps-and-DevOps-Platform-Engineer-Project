@@ -99,6 +99,22 @@ mlops-devops-platform/
 -->
 
 
+## **Key Skills Demonstrated**
+ - **MLOps:** 
+     - Managed the full ML lifecycle, including model training, versioning, deployment, and monitoring.
+ - **DevOps:**
+     - Automated infrastructure setup, containerization, and CI/CD pipelines.
+ - **Cloud Platforms:** 
+     - Deployed and managed applications on AWS, GCP, or Azure.
+ - **Big Data Tools:** 
+     - Worked with Apache Kafka and Apache Spark for real-time data processing.
+ - **LLM Ops:** 
+     - Fine-tuned and deployed large language models.
+ - **Monitoring and Alerting:** 
+     - Implemented monitoring and alerting systems for production ML systems. 
+
+
+
 ## **Project Components**
 
 1. **Data Ingestion and Preprocessing**
@@ -163,20 +179,6 @@ mlops-devops-platform/
 
  - **Proactive Monitoring & Alerting**
     - Implemented systems to ensure reliability, performance, and rapid incident response. -->
-
-## **Key Skills Demonstrated**
- - **MLOps:** 
-     - Managed the full ML lifecycle, including model training, versioning, deployment, and monitoring.
- - **DevOps:**
-     - Automated infrastructure setup, containerization, and CI/CD pipelines.
- - **Cloud Platforms:** 
-     - Deployed and managed applications on AWS, GCP, or Azure.
- - **Big Data Tools:** 
-     - Worked with Apache Kafka and Apache Spark for real-time data processing.
- - **LLM Ops:** 
-     - Fine-tuned and deployed large language models.
- - **Monitoring and Alerting:** 
-     - Implemented monitoring and alerting systems for production ML systems. 
 
 
 
