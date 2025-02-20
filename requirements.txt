@@ -2,4 +2,5 @@ faker
 pydantic
 fastapi
 uvicorn
-kafka
+kafka-python  # For Kafka producer
+requests     # For fetching data from the API
