@@ -114,6 +114,19 @@ mlops-devops-platform/
      - Implemented monitoring and alerting systems for production ML systems. 
 
 
+## **Tools and Technologies Used**
+
+- **Cloud Platforms:** AWS/GCP/Azure
+- **Containerization:** Docker, Kubernetes
+- **Infrastructure as Code:** Terraform
+- **MLOps Tools:** MLflow, Feast
+- **CI/CD:** GitHub Actions/Jenkins
+- **Programming:** Python, TensorFlow/PyTorch
+- **Big Data:** Apache Kafka, Apache Spark
+- **LLMOps:** Hugging Face Transformers
+- **Monitoring:** Prometheus, Grafana, ELK Stack
+
+
 
 ## **Project Components**
 
