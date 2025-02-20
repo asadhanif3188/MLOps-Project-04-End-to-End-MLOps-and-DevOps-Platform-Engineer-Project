@@ -75,7 +75,8 @@ mlops-devops-platform/
 │       └── service.yaml            # Kubernetes services
 ├── data_sources/                   # Dummy data source API code
 │   └── apis/
-│       └── dummy_dataset_api.py    # An API to generate dummy dataset for anomalies  
+│       └── anomaly_dataset_api
+│           └── data_api.py         # An API to generate dummy dataset for anomalies  
 ├── pipelines/
 │   ├── data_pipeline/              # Data ingestion and preprocessing
 │   │   ├── kafka_producer.py       # Kafka producer script
