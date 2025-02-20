@@ -19,7 +19,7 @@ list_of_files = [
     "data_sources/apis/anomaly_dataset_api/Dockerfile",
 
     "pipelines/data_pipeline/kafka_producer/main.py",
-    # "pipelines/data_pipeline/kafka_producer/requirements.txt",
+    "pipelines/data_pipeline/kafka_producer/requirements.txt",
     # "pipelines/data_pipeline/kafka_producer/Dockerfile",
     
     # "pipelines/ml_pipeline",
