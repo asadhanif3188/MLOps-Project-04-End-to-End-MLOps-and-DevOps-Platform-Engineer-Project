@@ -144,6 +144,39 @@ mlops-devops-platform/
         - Deploy the entire system on a cloud platform (AWS, GCP, or Azure).
 
 
+<!-- ## **Key Skills Demonstrated**
+
+ - **End-to-End ML Lifecycle Management**
+    - Orchestrated model training, versioning, deployment, and monitoring using MLOps best practices.
+
+ - **Automated DevOps & CI/CD Pipelines**
+    - Streamlined infrastructure setup, containerization, and continuous integration/delivery for scalable deployments.
+
+ - **Cloud Deployment & Management**
+    - Architected and maintained cloud-native solutions on cloud provider (AWS, GCP, or Azure).
+
+ - **Real-Time Data Processing**
+    - Leveraged Apache Kafka and Spark for high-throughput, low-latency data pipelines.
+
+ - **LLM Fine-Tuning & Deployment**
+    - Optimized and operationalized large language models for production use cases.
+
+ - **Proactive Monitoring & Alerting**
+    - Implemented systems to ensure reliability, performance, and rapid incident response. -->
+
+## **Key Skills Demonstrated**
+ - **MLOps:** 
+     - Managed the full ML lifecycle, including model training, versioning, deployment, and monitoring.
+ - **DevOps:**
+     - Automated infrastructure setup, containerization, and CI/CD pipelines.
+ - **Cloud Platforms:** 
+     - Deployed and managed applications on AWS, GCP, or Azure.
+ - **Big Data Tools:** 
+     - Worked with Apache Kafka and Apache Spark for real-time data processing.
+ - **LLM Ops:** 
+     - Fine-tuned and deployed large language models.
+ - **Monitoring and Alerting:** 
+     - Implemented monitoring and alerting systems for production ML systems. 
 
 
 
