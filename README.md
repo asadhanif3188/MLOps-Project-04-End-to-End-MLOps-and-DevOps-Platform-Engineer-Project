@@ -33,12 +33,14 @@ mlops-devops-platform/
 ├── data/           # Raw, processed, and feature store data
 ├── models/         # Anomaly detection and LLM model code
 ├── infrastructure/ # Terraform and Kubernetes configurations
+├── data_sources/   # Dummy data source API code
 ├── pipelines/      # Data and ML pipelines
 ├── monitoring/     # Monitoring and alerting configurations
 ├── scripts/        # Setup and deployment scripts
 ├── tests/          # Unit and integration tests
 ├── README.md       # Project README file
-└── requirements.txt # Python dependencies
+├── project_template.py  # Script to create the files and directories
+└── requirements.txt     # Python dependencies
 ```
 <!-- 
 Detailed directory structure.
@@ -71,6 +73,9 @@ mlops-devops-platform/
 │       ├── anomaly-detection.yaml  # Anomaly detection deployment
 │       ├── llm.yaml                # LLM deployment
 │       └── service.yaml            # Kubernetes services
+├── data_sources/                   # Dummy data source API code
+│   └── apis/
+│       └── dummy_dataset_api.py    # An API to generate dummy dataset for anomalies  
 ├── pipelines/
 │   ├── data_pipeline/              # Data ingestion and preprocessing
 │   │   ├── kafka_producer.py       # Kafka producer script
@@ -94,6 +99,7 @@ mlops-devops-platform/
 │   ├── unit/                       # Unit tests
 │   └── integration/                # Integration tests
 ├── README.md                       # Project README file
+├── project_template.py             # Script to create the files and directories
 └── requirements.txt                # Python dependencies
 ```
 -->
