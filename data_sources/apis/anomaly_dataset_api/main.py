@@ -1,3 +1,7 @@
+# This FastAPI-based service will generate synthetic data 
+# and expose endpoints to retrieve it.
+# -------------------------------------------------
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import json
@@ -5,6 +9,8 @@ import time
 import random
 from faker import Faker
 from pydantic import BaseModel
+
+# -------------------------------------------------
 
 # Initialize Faker and FastAPI
 fake = Faker()
@@ -58,7 +64,9 @@ def generate_anomalous_data():
         "label": "anomalous"  # Ground truth label
     }
 
+# -------------------------------------------------
 # API Endpoints
+
 @app.get("/generate/normal", response_model=DataResponse)
 async def generate_normal():
     return generate_normal_data()
