@@ -15,6 +15,7 @@ list_of_files = [
     # "data/features/",
 
     "data_sources/apis/anomaly_dataset_api/data_api.py",
+    "data_sources/apis/anomaly_dataset_api/requirements.txt",
     "data_sources/apis/anomaly_dataset_api/Dockerfile",
 
     # "pipelines/data_pipeline",
