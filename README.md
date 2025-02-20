@@ -99,7 +99,7 @@ mlops-devops-platform/
 -->
 
 
-## **Key Skills Demonstrated**
+## 🎯**Key Skills Demonstrated**
  - **MLOps:** 
      - Managed the full ML lifecycle, including model training, versioning, deployment, and monitoring.
  - **DevOps:**
