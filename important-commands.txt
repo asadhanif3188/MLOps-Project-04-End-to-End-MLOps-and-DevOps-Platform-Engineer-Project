@@ -6,3 +6,6 @@ conda activate myenv\
 
 --> Command to deactivate conda env.
 conda deactivate
+
+--> Command to build the anomaly_dataset_api image 
+docker build -t myapp .\data_sources\apis\anomaly_dataset_api
