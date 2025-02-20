@@ -8,4 +8,13 @@ conda activate myenv\
 conda deactivate
 
 --> Command to build the anomaly_dataset_api image 
-docker build -t anomaly_dataset:v3 .\data_sources\apis\anomaly_dataset_api
+docker build -t anomaly_dataset:v1 .\data_sources\apis\anomaly_dataset_api
+
+--> Command to run anomaly_dataset_api container
+docker run --name anomaly_dataset_api -p 8000:8000 -d anomaly_dataset:v1
+
+--> Command to build the kafka_producer image 
+docker build -t kafka_producer:v2 .\pipelines\data_pipeline\kafka_producer
+
+--> Command to run kafka_producer container
+docker run --name kafka_producer -d kafka_producer:v2

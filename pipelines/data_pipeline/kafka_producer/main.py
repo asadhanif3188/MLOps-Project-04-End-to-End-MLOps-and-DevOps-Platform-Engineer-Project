@@ -9,15 +9,16 @@ from kafka import KafkaProducer
 TOPIC = "anomaly_detection_topic"
 
 # API Configuration
-API_URL = "http://localhost:8000/generate"  # Use "/generate/normal" or "/generate/anomalous" for specific data
+# API_URL = "http://localhost:8000/generate"  # Use "/generate/normal" or "/generate/anomalous" for specific data
+API_URL = "http://anomaly_dataset_api:8000/generate"  # Use "/generate/normal" or "/generate/anomalous" for specific data
 
 # ----------------------------------------------------
 
-# Kafka Configuration
-producer = KafkaProducer(
-    bootstrap_servers='localhost:9092',
-    value_serializer=lambda v: json.dumps(v).encode('utf-8')
-)
+# # Kafka Configuration
+# producer = KafkaProducer(
+#     bootstrap_servers='localhost:9092',
+#     value_serializer=lambda v: json.dumps(v).encode('utf-8')
+# )
 
 
 def fetch_data_from_api():
@@ -34,8 +35,8 @@ def fetch_data_from_api():
 
 def send_to_kafka(data):
     if data:
-        producer.send(TOPIC, value=data)
-        producer.flush()
+        # producer.send(TOPIC, value=data)
+        # producer.flush()
         print(f"Sent to Kafka: {data}")
 
 if __name__ == "__main__":

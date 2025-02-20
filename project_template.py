@@ -20,7 +20,7 @@ list_of_files = [
 
     "pipelines/data_pipeline/kafka_producer/main.py",
     "pipelines/data_pipeline/kafka_producer/requirements.txt",
-    # "pipelines/data_pipeline/kafka_producer/Dockerfile",
+    "pipelines/data_pipeline/kafka_producer/Dockerfile",
     
     # "pipelines/ml_pipeline",
 ]
