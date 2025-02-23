@@ -27,6 +27,8 @@ list_of_files = [
 
     # "pipelines/ml_pipeline",
     "compose.yaml",
+    "compose-kafka.yaml",
+    "compose-airflow.yaml",
 ]
 
 
