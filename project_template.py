@@ -22,6 +22,9 @@ list_of_files = [
     "pipelines/data_pipeline/kafka_producer/requirements.txt",
     "pipelines/data_pipeline/kafka_producer/Dockerfile",
     
+    "pipelines/data_pipeline/airflow_dags/kafka_to_s3_dag.py",
+    "pipelines/data_pipeline/airflow_dags/requirements.txt",
+
     # "pipelines/ml_pipeline",
     "compose.yaml",
 ]
