@@ -18,6 +18,7 @@ from kafka import KafkaProducer
 # Read environment variables
 TOPIC = os.getenv("KAFKA_TOPIC")
 API_URL = os.getenv("ANOMALY_API_URL")
+KAFKA_SERVER = os.getenv("KAFKA_SERVER")
 
 # ----------------------------------------------------
 
@@ -26,6 +27,13 @@ API_URL = os.getenv("ANOMALY_API_URL")
 #     bootstrap_servers='localhost:9092',
 #     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 # )
+
+producer = KafkaProducer(
+    bootstrap_servers=KAFKA_SERVER,
+    retries=5,
+    request_timeout_ms=30000,
+    value_serializer=lambda v: json.dumps(v).encode('utf-8')
+)
 
 
 def fetch_data_from_api():
@@ -42,8 +50,8 @@ def fetch_data_from_api():
 
 def send_to_kafka(data):
     if data:
-        # producer.send(TOPIC, value=data)
-        # producer.flush()
+        producer.send(TOPIC, value=data)
+        producer.flush()
         print(f"Sent to Kafka: {data}")
 
 if __name__ == "__main__":

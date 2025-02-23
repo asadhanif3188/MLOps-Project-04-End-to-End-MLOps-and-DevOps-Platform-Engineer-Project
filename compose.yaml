@@ -2,18 +2,69 @@ services:
   anomaly_dataset_api:
     build:
       context: ./data_sources/apis/anomaly_dataset_api
-    image: anomaly_dataset:v1  # Custom image name
+    image: anomaly_dataset:v3  # Custom image name
     container_name: anomaly_dataset_api_container  # Custom container name
     ports:
       - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      retries: 3
+      start_period: 10s
+
 
   kafka_producer:
     build:
       context: ./pipelines/data_pipeline/kafka_producer
-    image: kafka_producer:v1  # Custom image name
+    image: kafka_producer:v3  # Custom image name
     container_name: kafka_producer_container  # Custom container name
     environment:
       - KAFKA_TOPIC=anomaly_detection_topic
       - ANOMALY_API_URL=http://anomaly_dataset_api:8000/generate
+      - KAFKA_SERVER=kafka:9092
     depends_on:
-      - anomaly_dataset_api
+      anomaly_dataset_api:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 2181:2181
+    
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+    healthcheck:
+      test: ["CMD", "kafka-topics", "--list", "--bootstrap-server", "kafka:9092"]
+      interval: 10s
+      retries: 5
+      start_period: 20s
+
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    depends_on:
+      - kafka
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181

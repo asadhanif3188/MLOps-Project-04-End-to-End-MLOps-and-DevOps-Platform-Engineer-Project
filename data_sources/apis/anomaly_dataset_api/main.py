@@ -9,6 +9,8 @@ import time
 import random
 from faker import Faker
 from pydantic import BaseModel
+from fastapi import status
+from fastapi.responses import JSONResponse
 
 # -------------------------------------------------
 
@@ -66,6 +68,16 @@ def generate_anomalous_data():
 
 # -------------------------------------------------
 # API Endpoints
+
+
+@app.get("/health", status_code=status.HTTP_200_OK)
+async def health_check():
+    return JSONResponse(
+        status_code=status.HTTP_200_OK,
+        content={"status": "healthy"}
+    )
+
+
 
 @app.get("/generate/normal", response_model=DataResponse)
 async def generate_normal():
