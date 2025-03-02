@@ -79,6 +79,7 @@ services:
   airflow-webserver:
     <<: *airflow-common
     command: webserver
+    user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"  # Ensures correct user
     ports:
       - 8080:8080
     healthcheck:
@@ -113,6 +114,7 @@ services:
   airflow-init:
     <<: *airflow-common
     command: version
+    user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"
     environment:
       <<: *airflow-common-env
       _AIRFLOW_DB_UPGRADE: 'true'
